@@ -477,12 +477,13 @@
     align-items: center;
   }
   .wrapper {
+    width: 600px;
     max-width: 600px;
     display: flex;
   }
 
   .img-wrapper {
-    flex-basis: 50%;
+    width: 50%;
     border-radius: 1rem 0 0 1rem;
   }
 
@@ -492,7 +493,7 @@
   }
 
   section {
-    flex-basis: 50%;
+    width: 50%;
     border-radius: 0 1rem 1rem 0;
     padding: 2rem;
   }
