@@ -1,0 +1,174 @@
+@layer reset {
+  /*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    /* display: block;
+    max-width: 100%; */
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}
+
+@layer style-guide {
+  :root {
+    --primary: hsl(158, 36%, 37%);
+    --primary-dark: hsl(158, 36%, 27%);
+    --secondary: hsl(30, 38%, 92%);
+
+    --neutral-dark: hsl(212, 21%, 14%);
+    --neutral-gray: hsl(228, 12%, 48%);
+    --neutral-white: hsl(0, 0%, 100%);
+
+    --sans-serif: "Montserrat", sans-serif;
+    --serif: "Fraunces", serif;
+
+    --fs-base: 14px;
+    --fw-regular: 500;
+    --fw-bold: 700;
+
+    --radius: 0.7rem;
+  }
+}
+
+@layer main {
+  body {
+    min-height: 100vh;
+    background-color: var(--secondary);
+    font-size: var(--fs-base);
+    font-weight: var(--fs-base);
+    font-family: var(--sans-serif);
+    color: var(--neutral-gray);
+
+    /* Only to display the card on the center of the screen */
+    display: grid;
+    align-content: center;
+  }
+
+  .product {
+    margin: 0 auto;
+    max-width: 300px;
+    background-color: var(--neutral-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .product__img img {
+    height: 100%;
+  }
+
+  .product__content {
+    padding: 0.75rem 1rem;
+
+    /* For a consistent spacing between content section elements */
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .product__category {
+    text-transform: uppercase;
+    font-size: 0.7125rem;
+    letter-spacing: 5px;
+  }
+
+  .product__name {
+    font-size: 1.85rem;
+    font-family: var(--serif);
+    font-weight: var(--fw-bold);
+    color: var(--neutral-dark);
+    line-height: 2rem;
+  }
+
+  .product__price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .product__current-price {
+    font-size: 2rem;
+    font-family: var(--serif);
+    color: var(--primary);
+  }
+
+  .product__original-price {
+    /* TO DO: improve accessibility */
+    text-decoration: line-through;
+  }
+
+  .btn {
+    border: 0;
+    padding: 0.875em;
+    background-color: var(--primary);
+    color: var(--neutral-white);
+    font-weight: var(--fw-bold);
+    font-family: sans-serif;
+    border-radius: var(--radius);
+  }
+
+  .btn:hover {
+    background-color: var(--primary-dark);
+  }
+
+  @media (min-width: 600px) {
+    .product {
+      max-width: 600px;
+      display: flex;
+    }
+
+    .product__img {
+      flex-basis: 50%;
+    }
+
+    .product__content {
+      flex-basis: 50%;
+      padding: 2rem;
+
+      grid-auto-rows: max-content;
+      gap: 1.25rem;
+    }
+  }
+}
+
+.flex-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
