@@ -9,6 +9,7 @@
     box-sizing: border-box;
   }
   * {
+    /* Reset margins */
     margin: 0;
   }
   body {
